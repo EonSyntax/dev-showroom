@@ -1,11 +1,13 @@
+import Link from "next/link";
+
 export default function DesktopNavbar() {
   return (
     <header className="fixed top-0 w-full z-50 bg-[#15121a]/80 backdrop-blur-xl">
       <div className="flex justify-between items-center h-16 px-8 max-w-480 mx-auto">
         <div className="flex items-center gap-8">
-          <span className="text-2xl font-black text-primary tracking-tighter font-grotesk">
+          <Link href="/" className="text-2xl font-black text-primary tracking-tighter font-grotesk">
             ImmanuelUI
-          </span>
+          </Link>
           {/* Add md:flex to make navlinks show theyre intentionally hidden now */}
           <nav className="hidden gap-6 items-center">
             <div className="group relative">
@@ -313,13 +315,13 @@ export default function DesktopNavbar() {
               </span>
               <span className="text-[75%] text-white">Join the Community</span>
             </button>
-            <button className="p-0.5 rounded-full border border-outline-variant/30 hover:border-primary transition-colors overflow-hidden">
+            <Link href="/admin-panel" className="p-0.5 rounded-full border border-outline-variant/30 hover:border-primary transition-colors overflow-hidden">
               <img
                 alt="Profile"
                 className="w-20 h-auto object-cover rounded-full"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk7tEY3Acnx_0sLbvHBuROrlIBOkY3Sip97JOqYjCDu6F7iaRiU6rw6Jn0Ir--zNHIgbDYEHSDatXmAL302nE8Rgr0z-hMOZOnDnAKFgLpC9fViam7bppvIxEdmdOvC0wqqK7KqRr0JWLgOuguv2QuZ-_FR7RUTH-yYkNDYju0DJ5n06c1qMgeqBlvzo70-mFdZco-zh873IaW_Zal4ijL1PI0BHAQeJ03pLmuRZpQOcAQQFfAdujzV5QheZMWu8kakhKFMk2eLr38"
               />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

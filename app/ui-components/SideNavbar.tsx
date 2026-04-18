@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function SideNavbar() {
   return (
@@ -14,9 +15,9 @@ export default function SideNavbar() {
             Frameworks
           </span>
         </div>
-        <a
+        <Link
           className="flex items-center gap-3 px-6 py-2 text-white font-geist text-xs uppercase tracking-widest hover:bg-[#2c2831] hover:text-primary transition-all duration-300 ease-in-out"
-          href="#"
+          href="/components"
         >
           <span
             className="material-symbols-outlined text-sm text-white"
@@ -25,7 +26,7 @@ export default function SideNavbar() {
             allergy
           </span>
           All
-        </a>
+        </Link>
         <a
           className="flex items-center gap-3 px-6 py-2 text-white font-geist text-xs uppercase tracking-widest hover:bg-[#2c2831] hover:text-primary transition-all duration-300 ease-in-out"
           href="#"
