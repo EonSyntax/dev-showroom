@@ -2,11 +2,14 @@ import Link from "next/link";
 
 export default function DesktopNavbar() {
   return (
-    <header className="fixed top-0 w-full z-50 bg-[#15121a]/80 backdrop-blur-xl">
+    <header className="fixed text-on-surface top-0 w-full z-50 bg-[#15121a]/80 backdrop-blur-xl">
       <div className="flex justify-between items-center h-16 px-8 max-w-480 mx-auto">
         <div className="flex items-center gap-8">
-          <Link href="/" className="text-2xl font-black text-primary tracking-tighter font-grotesk">
-            ImmanuelUI
+          <Link
+            href="/"
+            className="text-2xl font-black text-primary tracking-tighter font-grotesk"
+          >
+            DEV<span className="text-secondary">sr</span>
           </Link>
           {/* Add md:flex to make navlinks show theyre intentionally hidden now */}
           <nav className="hidden gap-6 items-center">
@@ -309,13 +312,19 @@ export default function DesktopNavbar() {
               </div>
             </button>
             <div className="h-5 w-px bg-outline-variant/60"></div>
-            <button className="flex items-center justify-center h-8 w-full rounded-full bg-surface-container-high">
+            <button className="flex items-center justify-center h-8 w-full rounded-full bg-surface-container-high hover:bg-black/90 border border-outline-variant/30 hover:border-secondary">
               <span className="material-symbols-outlined text-white text-sm">
                 add
               </span>
               <span className="text-[75%] text-white">Join the Community</span>
             </button>
-            <Link href="/admin-panel" className="p-0.5 rounded-full border border-outline-variant/30 hover:border-primary transition-colors overflow-hidden">
+            <Link href="/admin-panel/notifications" className="material-symbols-outlined fill text-slate-500 hover:bg-slate-800/50 transition-all duration-300 p-2 rounded-full active:scale-95 transform">
+              notifications
+            </Link>
+            <Link
+              href="/admin-panel"
+              className="p-0.5 rounded-full border border-outline-variant/30 hover:border-primary transition-colors overflow-hidden"
+            >
               <img
                 alt="Profile"
                 className="w-20 h-auto object-cover rounded-full"

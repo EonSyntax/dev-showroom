@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export default function SideNavbar() {
+export default function SideBar() {
   return (
-    <aside className="fixed left-0 top-16 h-[calc(100vh-64px)] w-44 bg-slate-950/60 hidden md:flex flex-col py-6 overflow-y-auto scrollbar-hide">
+    <aside className="fixed left-0 top-16 h-[calc(100vh-64px)] w-44 bg-slate-950 hidden md:flex flex-col py-6 overflow-y-auto scrollbar-hide">
       <div className="px-6 mb-8">
         <h3 className="font-geist text-xs uppercase tracking-widest text-secondary mb-1">
           Library

@@ -1,15 +1,15 @@
 import React from "react";
 import DesktopNavbar from "../ui-components/DesktopNavbar";
 import Link from "next/link";
-import SideNavbar from "../ui-components/SideNavbar";
+import SideBar from "../ui-components/SideBar";
 
 export default function Components() {
   return (
     <div className="bg-surface text-on-surface selection:bg-primary/30 selection:text-secondary">
       {/* <!-- TopNavBar --> */}
       <DesktopNavbar />
-      {/* <!-- SideNavBar --> */}
-      <SideNavbar />
+      {/* <!-- SideBar --> */}
+      <SideBar />
       {/* <!-- Main Content Area --> */}
       <main className="md:ml-52 pt-24 px-6 md:px-10 pb-12 min-h-screen">
         {/* <!-- Header Section --> */}
@@ -27,7 +27,7 @@ export default function Components() {
               Sort by:
             </span>
             <div className="relative">
-              <select className="appearance-none bg-surface-container-high text-on-surface border-none rounded-lg px-4 py-2 pr-10 text-sm focus:ring-2 focus:ring-primary cursor-pointer font-grotesk">
+              <select className="appearance-none bg-surface-container-high text-on-surface border-none rounded-full px-4 py-2 pr-10 text-sm focus:ring-2 focus:ring-primary cursor-pointer font-grotesk">
                 <option>A-Z</option>
                 <option>Newest First</option>
                 <option>Most Popular</option>
@@ -42,7 +42,10 @@ export default function Components() {
         {/* <!-- Components Grid --> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {/* <!-- Card 1 --> */}
-          <Link href="/developer/slug" className="group relative bg-surface-container-low rounded-xl overflow-hidden p-4 border border-outline-variant/10 hover:border-primary/30 transition-all duration-300">
+          <Link
+            href="/developer/slug"
+            className="group relative bg-surface-container-low rounded-xl overflow-hidden p-4 border border-outline-variant/10 hover:border-primary/30 transition-all duration-300"
+          >
             <div className="aspect-video rounded-lg mb-4 bg-slate-900 overflow-hidden relative group-hover:scale-[1.02] transition-transform duration-500">
               <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-transparent"></div>
               <div className="absolute inset-0 flex items-center justify-center">
@@ -363,12 +366,6 @@ export default function Components() {
           <span className="text-[10px] uppercase">Dev</span>
         </button>
       </nav>
-      {/* <!-- Floating Action Button --> */}
-      <button className="fixed bottom-24 right-8 w-14 h-14 bg-secondary text-on-secondary rounded-full shadow-xl shadow-secondary/20 flex items-center justify-center md:bottom-12 transition-transform hover:scale-110 active:scale-95 z-40">
-        <span className="material-symbols-outlined" data-icon="add">
-          add
-        </span>
-      </button>
     </div>
   );
 }

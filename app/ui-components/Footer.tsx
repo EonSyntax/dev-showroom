@@ -5,10 +5,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
           <div className="text-lg font-bold text-[#c0e22f] font-grotesk mb-4">
-            Emmanuel.codes
+            DEVsr
           </div>
           <p className="font-grotesk text-sm tracking-wide uppercase text-zinc-500">
-            © {new Date().getFullYear()} <span className="normal-case">ImmanuelUI</span> Engineered for velocity.
+            © {new Date().getFullYear()} <span className="normal-case">Dev-showroom</span> Engineered for velocity.
           </p>
         </div>
         <div className="flex flex-wrap gap-6 md:justify-end font-grotesk text-sm tracking-wide uppercase">

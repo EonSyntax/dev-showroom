@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import DesktopNavbar from "../../ui-components/DesktopNavbar";
-import SideNavbar from "@/app/ui-components/SideNavbar";
+import SideBar from "@/app/ui-components/SideBar";
 
-export default function Home() {
+export default function ComponentPage() {
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
   const [activeCode, setActiveCode] = useState<"react" | "tailwind" | "css">(
     "react",
@@ -33,8 +33,8 @@ export default function Home() {
       {/* <!-- TopNavBar --> */}
       <DesktopNavbar />
       <div className="pt-16 flex min-h-screen">
-        {/* <!-- SideNavBar (Left) --> */}
-        <SideNavbar />
+        {/* <!-- SideBar (Left) --> */}
+        <SideBar />
         {/* <!-- Center Panel --> */}
         <main className="flex-1 md:ml-44 lg:mr-80 p-8 lg:p-12 overflow-y-auto">
           <div className="mx-auto">

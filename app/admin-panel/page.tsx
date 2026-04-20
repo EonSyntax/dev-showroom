@@ -1,70 +1,410 @@
 import React from "react";
 import DesktopNavbar from "../ui-components/DesktopNavbar";
+import AdminSideBar from "../ui-components/AdminSideBar";
 
 export default function Admin() {
   return (
     <div className="bg-background text-on-surface">
       {/* <!-- TopNavBar --> */}
       <DesktopNavbar />
-      {/* <!-- SideNavBar --> */}
-      <aside className="hidden md:flex flex-col gap-1 w-64 h-screen fixed left-0 top-0 pt-20 bg-[#15121a] bg-[#1d1a22] no-border font-['Space_Grotesk'] text-sm tracking-wide z-40">
-        <div className="px-6 mb-8">
-          <h2 className="text-lg font-black text-white">Emmanuel</h2>
-          <p className="text-zinc-500 text-xs">System Architect</p>
-        </div>
-        <nav className="flex flex-col">
-          <a
-            className="border-l-2 border-[#c0e22f] bg-gradient-to-r from-[#afc6ff]/10 to-transparent text-[#afc6ff] font-bold px-6 py-3 flex items-center gap-3 hover:text-zinc-100 hover:bg-[#2c2831]/50 transition-colors"
-            href="#"
-          >
-            <span className="material-symbols-outlined">dashboard</span>{" "}
-            Dashboard
-          </a>
-          <a
-            className="text-zinc-500 font-medium px-6 py-3 flex items-center gap-3 hover:text-zinc-100 hover:bg-[#2c2831]/50 transition-colors"
-            href="#"
-          >
-            <span className="material-symbols-outlined">extension</span>{" "}
-            Components
-          </a>
-          <a
-            className="text-zinc-500 font-medium px-6 py-3 flex items-center gap-3 hover:text-zinc-100 hover:bg-[#2c2831]/50 transition-colors"
-            href="#"
-          >
-            <span className="material-symbols-outlined">inventory_2</span> My
-            Components
-          </a>
-          <a
-            className="text-zinc-500 font-medium px-6 py-3 flex items-center gap-3 hover:text-zinc-100 hover:bg-[#2c2831]/50 transition-colors"
-            href="#"
-          >
-            <span className="material-symbols-outlined">send</span> Submissions
-          </a>
-          <a
-            className="text-zinc-500 font-medium px-6 py-3 flex items-center gap-3 hover:text-zinc-100 hover:bg-[#2c2831]/50 transition-colors"
-            href="#"
-          >
-            <span className="material-symbols-outlined">category</span>{" "}
-            Categories
-          </a>
-          <a
-            className="text-zinc-500 font-medium px-6 py-3 flex items-center gap-3 hover:text-zinc-100 hover:bg-[#2c2831]/50 transition-colors"
-            href="#"
-          >
-            <span className="material-symbols-outlined">group</span> Users
-          </a>
-          <a
-            className="text-zinc-500 font-medium px-6 py-3 flex items-center gap-3 hover:text-zinc-100 hover:bg-[#2c2831]/50 transition-colors"
-            href="#"
-          >
-            <span className="material-symbols-outlined">settings</span> Settings
-          </a>
-        </nav>
-      </aside>
+      {/* <!-- AdminSideBar --> */}
+      <AdminSideBar />
       {/* <!-- Main Canvas --> */}
-      <main className="md:ml-64 pt-16 min-h-screen bg-background">
+      <main className="md:ml-44 pt-16 min-h-screen bg-background">
+        {/* <!-- CTO Welcome Header --> */}
+        <div className="mb-20 md:ml-10">
+          <div className="mb-10">
+            <h1 className="text-4xl font-extrabold tracking-tighter text-on-surface mb-2">
+              Systems Overview
+            </h1>
+            <p className="text-on-surface-variant font-mono text-sm max-w-2xl">
+              Real-time infrastructure health and contribution analytics for the
+              kinetic architecture framework.
+            </p>
+          </div>
+          {/* <!-- Stat Cards: Bento Grid --> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {/* <!-- Total Components --> */}
+            <div className="surface-container-low p-6 rounded-full border border-white/5 relative overflow-hidden group hover:border-primary/30 transition-all duration-300">
+              <div className="absolute -right-4 -top-4 w-24 h-24 bg-primary/10 blur-3xl rounded-full group-hover:bg-primary/20 transition-all"></div>
+              <p className="text-xs font-mono text-primary-fixed uppercase tracking-widest mb-2">
+                Total Components
+              </p>
+              <div className="flex items-end justify-between">
+                <span className="text-4xl font-bold tracking-tighter font-headline text-on-surface">
+                  1,284
+                </span>
+                <span className="text-secondary font-mono text-sm flex items-center mb-1">
+                  <span className="material-symbols-outlined text-xs mr-1">
+                    trending_up
+                  </span>
+                  +12.4%
+                </span>
+              </div>
+            </div>
+            {/* <!-- Pending Approvals --> */}
+            <div className="surface-container-low p-6 rounded-full border border-white/5 relative overflow-hidden group hover:border-tertiary/30 transition-all duration-300">
+              <div className="absolute -right-4 -top-4 w-24 h-24 bg-tertiary/10 blur-3xl rounded-full group-hover:bg-tertiary/20 transition-all"></div>
+              <p className="text-xs font-mono text-tertiary-fixed uppercase tracking-widest mb-2">
+                Pending Approvals
+              </p>
+              <div className="flex items-end justify-between">
+                <span className="text-4xl font-bold tracking-tighter font-headline text-on-surface">
+                  42
+                </span>
+                <span className="text-error font-mono text-sm flex items-center mb-1">
+                  <span className="material-symbols-outlined text-xs mr-1">
+                    history
+                  </span>
+                  High Priority
+                </span>
+              </div>
+            </div>
+            {/* <!-- Approved --> */}
+            <div className="surface-container-low p-6 rounded-full border border-white/5 relative overflow-hidden group hover:border-secondary/30 transition-all duration-300">
+              <div className="absolute -right-4 -top-4 w-24 h-24 bg-secondary/10 blur-3xl rounded-full group-hover:bg-secondary/20 transition-all"></div>
+              <p className="text-xs font-mono text-secondary-fixed uppercase tracking-widest mb-2">
+                Approved Units
+              </p>
+              <div className="flex items-end justify-between">
+                <span className="text-4xl font-bold tracking-tighter font-headline text-on-surface">
+                  1,102
+                </span>
+                <span className="text-zinc-500 font-mono text-sm mb-1 italic">
+                  Verified
+                </span>
+              </div>
+            </div>
+            {/* <!-- Total Developers --> */}
+            <div className="surface-container-low p-6 rounded-full border border-white/5 relative overflow-hidden group hover:border-white/20 transition-all duration-300">
+              <div className="absolute -right-4 -top-4 w-24 h-24 bg-white/5 blur-3xl rounded-full group-hover:bg-white/10 transition-all"></div>
+              <p className="text-xs font-mono text-outline uppercase tracking-widest mb-2">
+                Total Developers
+              </p>
+              <div className="flex items-end justify-between">
+                <span className="text-4xl font-bold tracking-tighter font-headline text-on-surface">
+                  856
+                </span>
+                <span className="text-secondary font-mono text-sm flex items-center mb-1">
+                  <span className="material-symbols-outlined text-xs mr-1">
+                    add_circle
+                  </span>
+                  +48
+                </span>
+              </div>
+            </div>
+          </div>
+          {/* <!-- Charts Section --> */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+            {/* <!-- Component Creation Over Time --> */}
+            <div className="lg:col-span-2 surface-container-low rounded-[3rem] p-8 border border-white/5 shadow-2xl">
+              <div className="flex items-center justify-between mb-8">
+                <div>
+                  <h3 className="text-xl font-bold tracking-tight">
+                    Component Creation Over Time
+                  </h3>
+                  <p className="text-xs font-mono text-zinc-500 uppercase">
+                    Quarterly velocity report
+                  </p>
+                </div>
+                <div className="flex space-x-2">
+                  <span className="px-3 py-1 bg-zinc-900 rounded-full text-[10px] font-mono text-zinc-400 border border-white/5 cursor-pointer hover:text-white">
+                    WEEKLY
+                  </span>
+                  <span className="px-3 py-1 bg-primary text-on-primary rounded-full text-[10px] font-mono font-bold cursor-pointer">
+                    MONTHLY
+                  </span>
+                </div>
+              </div>
+              {/* <!-- Line Chart Visualization (SVG) --> */}
+              <div className="h-64 w-full relative flex items-end overflow-hidden">
+                <svg className="w-full h-full" viewBox="0 0 1000 300">
+                  {/* <!-- Grid Lines --> */}
+                  <line
+                    stroke="#333"
+                    strokeWidth="1"
+                    x1="0"
+                    x2="1000"
+                    y1="280"
+                    y2="280"
+                  ></line>
+                  <line
+                    stroke="#222"
+                    strokeWidth="1"
+                    x1="0"
+                    x2="1000"
+                    y1="200"
+                    y2="200"
+                  ></line>
+                  <line
+                    stroke="#222"
+                    strokeWidth="1"
+                    x1="0"
+                    x2="1000"
+                    y1="120"
+                    y2="120"
+                  ></line>
+                  <line
+                    stroke="#222"
+                    strokeWidth="1"
+                    x1="0"
+                    x2="1000"
+                    y1="40"
+                    y2="40"
+                  ></line>
+                  {/* <!-- Main Area/Line --> */}
+                  <path
+                    d="M0 280 L100 240 L200 260 L300 180 L400 200 L500 120 L600 150 L700 80 L800 100 L900 40 L1000 60 V300 H0 Z"
+                    fill="url(#grad1)"
+                    fillOpacity="0.2"
+                  ></path>
+                  <path
+                    d="M0 280 L100 240 L200 260 L300 180 L400 200 L500 120 L600 150 L700 80 L800 100 L900 40 L1000 60"
+                    fill="none"
+                    stroke="#afc6ff"
+                    strokeLinecap="round"
+                    strokeWidth="4"
+                  ></path>
+                  {/* <!-- Highlight Point --> */}
+                  <circle
+                    className="animate-pulse"
+                    cx="900"
+                    cy="40"
+                    fill="#c0e22f"
+                    r="6"
+                  ></circle>
+                  <defs>
+                    <linearGradient
+                      id="grad1"
+                      x1="0%"
+                      x2="0%"
+                      y1="0%"
+                      y2="100%"
+                    >
+                      <stop
+                        offset="0%"
+                        className="[stop-color: #afc6ff] [stop-opacity: 1]"
+                      ></stop>
+                      <stop
+                        offset="100%"
+                        className="[stop-color: #15121a] [stop-opacity: 0]"
+                      ></stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                {/* <!-- X-Axis Labels --> */}
+                <div className="absolute bottom-0 w-full flex justify-between px-2 font-mono text-[10px] text-zinc-600">
+                  <span>JAN</span>
+                  <span>FEB</span>
+                  <span>MAR</span>
+                  <span>APR</span>
+                  <span>MAY</span>
+                  <span>JUN</span>
+                  <span>JUL</span>
+                  <span>AUG</span>
+                  <span>SEP</span>
+                  <span>OCT</span>
+                </div>
+              </div>
+            </div>
+            {/* <!-- Category Distribution --> */}
+            <div className="surface-container-low rounded-xl p-8 border border-white/5">
+              <h3 className="text-xl font-bold tracking-tight mb-8">
+                Category Distribution
+              </h3>
+              <div className="relative flex justify-center mb-8">
+                {/* <!-- Circular Gauge / Donut Pie Chart Simulation --> */}
+                <svg
+                  className="w-48 h-48 transform -rotate-90"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    fill="transparent"
+                    r="40"
+                    stroke="#2c2831"
+                    strokeWidth="8"
+                  ></circle>
+                  {/* <!-- Nav section (Blue) --> */}
+                  <circle
+                    cx="50"
+                    cy="50"
+                    fill="transparent"
+                    r="40"
+                    stroke="#afc6ff"
+                    strokeDasharray="251.2"
+                    strokeDashoffset="62.8"
+                    strokeWidth="12"
+                  ></circle>
+                  {/* <!-- Shell section (Lime) --> */}
+                  <circle
+                    cx="50"
+                    cy="50"
+                    fill="transparent"
+                    r="40"
+                    stroke="#c0e22f"
+                    strokeDasharray="251.2"
+                    strokeDashoffset="188.4"
+                    strokeWidth="12"
+                  ></circle>
+                  {/* <!-- Layout section (Purple) --> */}
+                  <circle
+                    cx="50"
+                    cy="50"
+                    fill="transparent"
+                    r="40"
+                    stroke="#ddb7ff"
+                    strokeDasharray="251.2"
+                    strokeDashoffset="226.1"
+                    strokeWidth="12"
+                  ></circle>
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                  <span className="text-3xl font-bold font-headline">128</span>
+                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+                    Active Types
+                  </span>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 rounded-full bg-primary"></div>
+                    <span className="text-xs font-mono">
+                      Navigation Clusters
+                    </span>
+                  </div>
+                  <span className="text-xs font-mono font-bold">45%</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 rounded-full bg-secondary"></div>
+                    <span className="text-xs font-mono">Design Shells</span>
+                  </div>
+                  <span className="text-xs font-mono font-bold">30%</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 rounded-full bg-tertiary"></div>
+                    <span className="text-xs font-mono">Layout Modules</span>
+                  </div>
+                  <span className="text-xs font-mono font-bold">25%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <!-- Activity Feed Section --> */}
+          <div className="surface-container-low rounded-xl border border-white/5 overflow-hidden">
+            <div className="px-8 py-6 border-b border-white/5 flex items-center justify-between">
+              <div>
+                <h3 className="text-xl font-bold tracking-tight">
+                  System Activity Log
+                </h3>
+                <p className="text-xs font-mono text-zinc-500 uppercase">
+                  Recent Submissions &amp; CTO Clearances
+                </p>
+              </div>
+              <button className="text-xs font-mono text-primary hover:text-white transition-colors flex items-center">
+                VIEW ALL LOGS
+                <span className="material-symbols-outlined text-sm ml-2">
+                  open_in_new
+                </span>
+              </button>
+            </div>
+            <div className="divide-y divide-white/5">
+              {/* <!-- Activity Item 1 --> */}
+              <div className="px-8 py-4 flex items-center justify-between hover:bg-white/5 transition-colors group">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary border border-secondary/20">
+                    <span className="material-symbols-outlined">verified</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">
+                      Kinetic Sidebar v3.1 approved for production
+                    </p>
+                    <p className="text-[10px] font-mono text-zinc-500">
+                      By <span className="text-blue-400">Admin/CTO</span> • 12
+                      minutes ago
+                    </p>
+                  </div>
+                </div>
+                <span className="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-widest">
+                  Clearance High
+                </span>
+              </div>
+              {/* <!-- Activity Item 2 --> */}
+              <div className="px-8 py-4 flex items-center justify-between hover:bg-white/5 transition-colors group">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+                    <span className="material-symbols-outlined">
+                      add_circle
+                    </span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">
+                      New Submission: "Glassmorphic Bento Card" by
+                      <span className="text-blue-400">@alex_dev</span>
+                    </p>
+                    <p className="text-[10px] font-mono text-zinc-500">
+                      Waiting for CTO Review • 45 minutes ago
+                    </p>
+                  </div>
+                </div>
+                <span className="px-3 py-1 bg-surface-container-highest text-zinc-400 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                  Pending
+                </span>
+              </div>
+              {/* <!-- Activity Item 3 --> */}
+              <div className="px-8 py-4 flex items-center justify-between hover:bg-white/5 transition-colors group">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary border border-tertiary/20">
+                    <span className="material-symbols-outlined">terminal</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">
+                      Global CSS variables updated for
+                      <span className="text-lime-400">
+                        The Kinetic Architect
+                      </span>
+                    </p>
+                    <p className="text-[10px] font-mono text-zinc-500">
+                      System Core Update • 2 hours ago
+                    </p>
+                  </div>
+                </div>
+                <span className="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-[10px] font-bold uppercase tracking-widest">
+                  Core Update
+                </span>
+              </div>
+              {/* <!-- Activity Item 4 --> */}
+              <div className="px-8 py-4 flex items-center justify-between hover:bg-white/5 transition-colors group">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 rounded-full bg-error-container/10 flex items-center justify-center text-error border border-error/20">
+                    <span className="material-symbols-outlined">
+                      report_problem
+                    </span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium">
+                      Failed build detected: "Legacy Footer Refactor"
+                    </p>
+                    <p className="text-[10px] font-mono text-zinc-500">
+                      Contributor: <span className="text-error">@guest_99</span>{" "}
+                      • 4 hours ago
+                    </p>
+                  </div>
+                </div>
+                <span className="px-3 py-1 bg-error-container text-on-error-container rounded-full text-[10px] font-bold uppercase tracking-widest">
+                  Fatal
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* <!-- Hero Section --> */}
-        <section className="relative w-full h-[300px] overflow-hidden">
+        <section className="relative w-full h-75 overflow-hidden">
           <img
             className="w-full h-full object-cover"
             data-alt="abstract digital landscape with neon circuit lines and flowing particles in electric blue and deep purple gradients"
@@ -93,17 +433,18 @@ export default function Admin() {
               </button>
             </div>
             <div className="flex-1 pb-4">
-              <div className="flex items-center gap-3">
-                <h1 className="text-4xl font-headline font-bold tracking-tight text-white">
+              <div className="flex items-center gap-1">
+                <h1 className="text-4xl font-grotesk font-bold tracking-tight text-white">
                   XoCode
                 </h1>
-                <button className="text-zinc-500 hover:text-secondary transition-colors">
+                <p className="text-zinc-300 text-xs">System Architect</p>
+                <button className="text-zinc-500 pl-3 hover:text-secondary transition-colors">
                   <span className="material-symbols-outlined">edit</span>
                 </button>
               </div>
-              <p className="text-zinc-400 mt-1 max-w-lg font-body">
-                I am 16, a passionate Fullstack Engineer pushing the boundaries
-                of web interactivity. Building the future of Emmanuel.codes!
+              <p className="text-zinc-400 mt-1 max-w-lg font-inter">
+                I am 36, a passionate Fullstack Engineer pushing the boundaries
+                of web interactivity. Building the future of Dev Showroom!
               </p>
             </div>
             <div className="flex gap-3 pb-4">
@@ -111,7 +452,7 @@ export default function Admin() {
                 <span className="material-symbols-outlined fill text-secondary">
                   verified
                 </span>
-                <span className="text-sm font-label font-medium text-on-surface">
+                <span className="text-sm font-grotesk font-medium text-on-surface">
                   Active Curator
                 </span>
               </div>
@@ -124,17 +465,17 @@ export default function Admin() {
           </div>
           {/* <!-- Tabbed Interface --> */}
           <div className="mt-12 flex gap-8 border-b border-outline-variant/20">
-            <button className="pb-4 text-secondary border-b-2 border-secondary font-headline font-bold text-lg px-2">
+            <button className="pb-4 text-secondary border-b-2 border-secondary font-grotesk font-bold text-lg px-2">
               My Components
             </button>
-            <button className="pb-4 text-zinc-500 hover:text-on-surface transition-colors font-headline font-medium text-lg px-2">
+            <button className="pb-4 text-zinc-500 hover:text-on-surface transition-colors font-grotesk font-medium text-lg px-2">
               Bookmarked
             </button>
           </div>
           {/* <!-- Grid Layout --> */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-10">
             {/* <!-- Card 1 --> */}
-            <div className="group surface-container-low rounded-xl overflow-hidden hover:translate-y-[-4px] transition-all duration-300 shadow-xl border border-outline-variant/10">
+            <div className="group surface-container-low rounded-xl overflow-hidden hover:translate-y-1 transition-all duration-300 shadow-xl border border-outline-variant/10">
               <div className="h-48 overflow-hidden relative">
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -153,7 +494,7 @@ export default function Admin() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-headline font-bold text-white mb-2">
+                <h3 className="text-xl font-grotesk font-bold text-white mb-2">
                   Kinetic Sidebar Engine
                 </h3>
                 <div className="flex items-center justify-between">
@@ -186,7 +527,7 @@ export default function Admin() {
               </div>
             </div>
             {/* <!-- Card 2 --> */}
-            <div className="group surface-container-low rounded-xl overflow-hidden hover:translate-y-[-4px] transition-all duration-300 shadow-xl border border-outline-variant/10">
+            <div className="group surface-container-low rounded-xl overflow-hidden hover:translate-y-1 transition-all duration-300 shadow-xl border border-outline-variant/10">
               <div className="h-48 overflow-hidden relative">
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -205,7 +546,7 @@ export default function Admin() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-headline font-bold text-white mb-2">
+                <h3 className="text-xl font-grotesk font-bold text-white mb-2">
                   Bento Grid Template v2
                 </h3>
                 <div className="flex items-center justify-between">
@@ -238,7 +579,7 @@ export default function Admin() {
               </div>
             </div>
             {/* <!-- Card 3 --> */}
-            <div className="group surface-container-low rounded-xl overflow-hidden hover:translate-y-[-4px] transition-all duration-300 shadow-xl border border-outline-variant/10">
+            <div className="group surface-container-low rounded-xl overflow-hidden hover:translate-y-1 transition-all duration-300 shadow-xl border border-outline-variant/10">
               <div className="h-48 overflow-hidden relative">
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -257,7 +598,7 @@ export default function Admin() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-headline font-bold text-white mb-2">
+                <h3 className="text-xl font-grotesk font-bold text-white mb-2">
                   Neon Trigger Library
                 </h3>
                 <div className="flex items-center justify-between">
@@ -296,10 +637,10 @@ export default function Admin() {
                   <span className="text-secondary font-bold geist-mono text-xs mb-2 tracking-[0.2em] uppercase">
                     Featured Work
                   </span>
-                  <h2 className="text-3xl font-headline font-extrabold text-white mb-4">
+                  <h2 className="text-3xl font-grotesk font-extrabold text-white mb-4">
                     Dark Matter IDE Shell
                   </h2>
-                  <p className="text-zinc-400 mb-6 font-body">
+                  <p className="text-zinc-400 mb-6 font-inter">
                     A high-fidelity dashboard shell designed for developers.
                     Features native-feel transitions and a custom glassmorphism
                     engine.
@@ -322,14 +663,14 @@ export default function Admin() {
                     data-alt="complex code editor interface with vibrant syntax highlighting and semi-transparent panels on a dark high-tech background"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfb3TsV7k6AkndY6-sA42h_TCvfJ5VNaL8cEPnLPEvfGZGUaDwfq8mwU7aY9nwIItdpj6XLuA5oUK3wpttdAKjeWKInYUroE1Yt7hfe-SBczsQQOnPIxK2GTOA9_oPzPd-56RVSzSzKfboileYhfQpE3LntzwpLzzV-1yJVwbJJaW0KrBPmaOsodR41ncP8hFjovwDBjZ3t9Oy-tubeBlxl7kmFti8C2ubtWsIX-s2ahG0yp8B9-wUvWc7Q1WLxeoFvGbJjt2MAdRt"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-surface-container-high via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-linear-to-r from-surface-container-high via-transparent to-transparent"></div>
                 </div>
               </div>
             </div>
             {/* <!-- Quick Stats Bento --> */}
             <div className="surface-container-highest p-8 rounded-xl border border-outline-variant/10 flex flex-col justify-between">
               <div>
-                <h4 className="text-zinc-400 font-headline font-bold text-sm uppercase tracking-widest mb-6">
+                <h4 className="text-zinc-400 font-grotesk font-bold text-sm uppercase tracking-widest mb-6">
                   System Health
                 </h4>
                 <div className="space-y-6">

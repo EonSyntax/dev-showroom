@@ -25,12 +25,12 @@ export default function Homee() {
                 </span>
               </h1>
               <p className="text-xl text-on-surface-variant max-w-lg mb-10 leading-relaxed">
-                Premium animated components for high-performance interfaces.
+                Dev-showroom(<span className="text-primary">DEV<span className="text-secondary">sr</span></span>) give you access to Premium animated components for high-performance interfaces.
                 Engineered for velocity and aesthetic precision.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="#"
+                  href="/components"
                   className="bg-primary text-on-primary px-8 py-4 rounded-full font-grotesk font-bold text-lg active:scale-95 duration-200 neon-glow-primary flex items-center gap-2"
                 >
                   Browse Components
